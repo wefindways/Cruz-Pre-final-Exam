@@ -22,6 +22,7 @@ const Modal = ({ setIsModalOpen }) => {
             name="image"
             accept="image/*"
             className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
+            required
           />
         </div>
 
@@ -34,6 +35,7 @@ const Modal = ({ setIsModalOpen }) => {
             name="name"
             placeholder="Enter product name"
             className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
+            required
           />
         </div>
 
@@ -44,6 +46,7 @@ const Modal = ({ setIsModalOpen }) => {
             name="category"
             placeholder="e.g. Electronics"
             className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
+            required
           />
         </div>
 
@@ -56,6 +59,7 @@ const Modal = ({ setIsModalOpen }) => {
             placeholder="Enter a short description..."
             rows="3"
             className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition resize-none"
+            required
           />
         </div>
 
@@ -68,6 +72,7 @@ const Modal = ({ setIsModalOpen }) => {
             placeholder="Enter specifications..."
             rows="3"
             className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition resize-none"
+            required
           />
         </div>
 
@@ -80,6 +85,7 @@ const Modal = ({ setIsModalOpen }) => {
               min={0}
               placeholder="0–5"
               className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
+              required
             />
           </div>
           <div className="space-y-1">
@@ -90,6 +96,7 @@ const Modal = ({ setIsModalOpen }) => {
               placeholder="₱0.00"
               min={0}
               className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
+              required
             />
           </div>
           <div className="space-y-1">
@@ -102,6 +109,7 @@ const Modal = ({ setIsModalOpen }) => {
               placeholder="0"
               min={0}
               className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
+              required
             />
           </div>
         </div>
