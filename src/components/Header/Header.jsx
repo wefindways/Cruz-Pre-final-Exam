@@ -1,6 +1,7 @@
 import Logo from "./Logo";
 import CartIcon from "./CartIcon";
 import SearchBar from "./SearchBar";
+import AddProduct from "./AddProduct";
 
 const Header = () => {
   return (
@@ -9,7 +10,10 @@ const Header = () => {
         <Logo />
         <SearchBar />
       </div>
-      <CartIcon />
+      <div className="flex gap-5">
+        <AddProduct />
+        <CartIcon />
+      </div>
     </header>
   );
 };
