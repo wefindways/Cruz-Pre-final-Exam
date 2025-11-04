@@ -5,7 +5,7 @@ import AddProduct from "./AddProduct";
 import { useState } from "react";
 import Modal from "../Modal";
 
-const Header = () => {
+const Header = ({ onAddProduct }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -22,7 +22,10 @@ const Header = () => {
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/50 flex justify-center z-50">
           <div className="absolute top-23">
-            <Modal setIsModalOpen={setIsModalOpen} />
+            <Modal
+              setIsModalOpen={setIsModalOpen}
+              onAddProduct={onAddProduct}
+            />
           </div>
         </div>
       )}

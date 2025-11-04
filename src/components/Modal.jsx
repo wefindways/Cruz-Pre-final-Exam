@@ -1,9 +1,35 @@
 import { X } from "lucide-react";
+import { useState } from "react";
 
-const Modal = ({ setIsModalOpen }) => {
+const Modal = ({ setIsModalOpen, onAddProduct }) => {
+  const [formData, setFormData] = useState({
+    image: "",
+    name: "",
+    category: "",
+    description: "",
+    specification: "",
+    rating: "",
+    price: "",
+    quantity: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: files ? URL.createObjectURL(files[0]) : value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    onAddProduct(formData);
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="max-w-lg w-full mx-auto bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-      {/* Form */}
       <div className="mb-6 flex justify-between items-center gap-2">
         <h2 className="text-2xl font-semibold text-gray-800 ">
           Add New Product
@@ -12,7 +38,7 @@ const Modal = ({ setIsModalOpen }) => {
           <X onClick={() => setIsModalOpen(false)} size={25} />
         </div>
       </div>
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={handleSubmit}>
         <div className="space-y-1">
           <label className="text-sm font-medium text-gray-600">
             Feature Image
@@ -21,6 +47,7 @@ const Modal = ({ setIsModalOpen }) => {
             type="file"
             name="image"
             accept="image/*"
+            onChange={handleChange}
             className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
             required
           />
@@ -33,6 +60,7 @@ const Modal = ({ setIsModalOpen }) => {
           <input
             type="text"
             name="name"
+            onChange={handleChange}
             placeholder="Enter product name"
             className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
             required
@@ -44,6 +72,7 @@ const Modal = ({ setIsModalOpen }) => {
           <input
             type="text"
             name="category"
+            onChange={handleChange}
             placeholder="e.g. Electronics"
             className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
             required
@@ -56,6 +85,7 @@ const Modal = ({ setIsModalOpen }) => {
           </label>
           <textarea
             name="description"
+            onChange={handleChange}
             placeholder="Enter a short description..."
             rows="3"
             className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition resize-none"
@@ -70,6 +100,7 @@ const Modal = ({ setIsModalOpen }) => {
           <textarea
             name="specification"
             placeholder="Enter specifications..."
+            onChange={handleChange}
             rows="3"
             className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition resize-none"
             required
@@ -84,6 +115,7 @@ const Modal = ({ setIsModalOpen }) => {
               name="rating"
               min={0}
               placeholder="0–5"
+              onChange={handleChange}
               className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
               required
             />
@@ -94,6 +126,7 @@ const Modal = ({ setIsModalOpen }) => {
               type="number"
               name="price"
               placeholder="₱0.00"
+              onChange={handleChange}
               min={0}
               className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
               required
@@ -107,6 +140,7 @@ const Modal = ({ setIsModalOpen }) => {
               type="number"
               name="quantity"
               placeholder="0"
+              onChange={handleChange}
               min={0}
               className="w-full border border-gray-300 focus:border-violet-500 focus:ring focus:ring-violet-200 outline-none p-2.5 rounded-lg transition"
               required
