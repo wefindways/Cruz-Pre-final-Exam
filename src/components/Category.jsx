@@ -1,6 +1,4 @@
-import products from "../hooks/products";
-
-const Category = () => {
+const Category = ({products}) => {
   return (
     <div className="flex items-center gap-4 py-8 px-12">
       {products.map((product, index) => (
