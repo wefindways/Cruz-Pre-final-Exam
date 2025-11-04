@@ -17,7 +17,7 @@ const Layout = () => {
       <Header onAddProduct={handleAddProduct} />
 
       <main className="grow">
-        <Category />
+        <Category products={products} />
         <ProductDisplay products={products} />
       </main>
 
