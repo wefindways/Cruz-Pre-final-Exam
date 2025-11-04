@@ -1,4 +1,4 @@
-import products from "../../hooks/products";
+import products from "../hooks/products";
 
 const ProductDisplay = () => {
   return (
