@@ -7,6 +7,7 @@ import productsData from "../hooks/products";
 
 const Layout = () => {
   const [products, setProducts] = useState(productsData);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const handleAddProduct = (newProduct) => {
     setProducts((prevProducts) => [...prevProducts, newProduct]);
@@ -17,8 +18,14 @@ const Layout = () => {
       <Header onAddProduct={handleAddProduct} />
 
       <main className="grow">
-        <Category products={products} />
-        <ProductDisplay products={products} />
+        <Category
+          products={products}
+          setSelectedCategory={setSelectedCategory}
+        />
+        <ProductDisplay
+          products={products}
+          selectedCategory={selectedCategory}
+        />
       </main>
 
       <Footer />
