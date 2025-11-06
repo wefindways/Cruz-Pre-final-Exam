@@ -1,16 +1,12 @@
 import { useParams } from "react-router-dom";
 import productsData from "../hooks/products";
-import { Link } from "react-router-dom";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const product = productsData.find((p) => p.id === parseInt(id));
 
   return (
-    <div className="max-w-xl mx-auto mt-15 bg-white rounded-2xl shadow-md p-8">
-      <div>
-        <Link to="/">Back to home</Link>
-      </div>
+    <div className="max-w-full mx-auto bg-white rounded-2xl shadow-md p-8">
       <div>
         <div className="flex justify-center mb-6">
           <img
