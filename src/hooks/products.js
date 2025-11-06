@@ -4,25 +4,40 @@ import cannon_eos_camera from "../assets/cannon_eos_camera.png";
 
 const productsData = [
   {
-    name: "Iphone 14",
-    price: 999.99,
-    rating: 5,
+    id: 1,
     image: iphone_14,
+    name: "Iphone 14",
     category: "Smartphones",
+    description:
+      "The iPhone 14 offers powerful performance, an advanced dual-camera system, and impressive battery life. With its sleek design and Apple’s A15 Bionic chip, it delivers speed, durability, and stunning photo and video quality.",
+    specs: "lorem ipsum",
+    rating: 5,
+    price: 999.99,
+    quantity: 300,
   },
   {
-    name: "Google Pixle",
-    price: 499.99,
-    rating: 5,
+    id: 2,
     image: google_pixel,
+    name: "Google Pixle",
     category: "Phone",
+    description:
+      "The Google Pixel is a sleek smartphone known for its powerful camera, smooth performance, and pure Android experience. It captures stunning photos, even in low light, and delivers fast, smart, and secure performance powered by Google AI.",
+    specs: "lorem ipsum",
+    rating: 5,
+    price: 499.99,
+    quantity: 50,
   },
   {
-    name: "Cannon EOS Camera",
-    price: 749.99,
-    rating: 5,
+    id: 3,
     image: cannon_eos_camera,
+    name: "Cannon EOS Camera",
     category: "Camera",
+    description:
+      "The Canon EOS is a high-performance digital camera that captures sharp, vibrant photos and videos. With its fast autofocus, interchangeable lenses, and sleek design, it’s perfect for both beginners and professionals.",
+    specs: "lorem ipsum",
+    rating: 5,
+    price: 749.99,
+    quantity: 80,
   },
 ];
 
