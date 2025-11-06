@@ -81,7 +81,7 @@ const ProductDetails = () => {
           <div className="mt-4">
             <span className="font-medium w-40">Subtotal:</span>
             <span className="ml-3 text-purple-600 font-bold">
-              {(selectedQuantity * product.price)}
+              {formatCurrency(selectedQuantity * product.price)}
             </span>
           </div>
 
