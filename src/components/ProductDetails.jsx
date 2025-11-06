@@ -1,20 +1,8 @@
-import { useParams } from "react-router-dom";
-import productsData from "../hooks/products";
 import { useState } from "react";
 import { formatCurrency } from "../utils/formatCurrency";
 
-const ProductDetails = () => {
-  const { id } = useParams();
-  const product = productsData.find((p) => p.id === parseInt(id));
+const ProductDetails = ({ product }) => {
   const [selectedQuantity, setSelectedQuantity] = useState(1);
-
-  if (!product) {
-    return (
-      <div className="flex justify-center items-center h-96">
-        <p className="text-gray-500 text-lg">Product not found.</p>
-      </div>
-    );
-  }
 
   return (
     <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
