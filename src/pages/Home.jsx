@@ -1,19 +1,14 @@
-import ProductDisplay from "../components/ProductDisplay";
+// Home.jsx
 import Layout from "../layout/Layout";
+import ProductDisplay from "../components/ProductDisplay";
 import Category from "../components/Category";
 import { useState } from "react";
-import productsData from "../hooks/products";
 
-const Home = () => {
+const Home = ({ products, onAddProduct }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [products, setProducts] = useState(productsData);
-
-  const handleAddProduct = (newProduct) => {
-    setProducts((prevProducts) => [...prevProducts, newProduct]);
-  };
 
   return (
-    <Layout onAddProduct={handleAddProduct}>
+    <Layout onAddProduct={onAddProduct}>
       <Category products={products} setSelectedCategory={setSelectedCategory} />
       <ProductDisplay products={products} selectedCategory={selectedCategory} />
     </Layout>

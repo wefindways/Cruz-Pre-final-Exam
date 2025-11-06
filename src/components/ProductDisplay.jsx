@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ProductDisplay = ({ products, selectedCategory }) => {
   const filteredProducts =
     selectedCategory === "All"
@@ -7,9 +9,10 @@ const ProductDisplay = ({ products, selectedCategory }) => {
             product.category.toLowerCase() === selectedCategory.toLowerCase()
         );
   return (
-    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-15 gap-8">
+    <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-15 gap-8">
       {filteredProducts.map((product, index) => (
-        <div
+        <Link
+          to={`/details/${product.id}`}
           key={index}
           className="bg-linear-to-r from-gray-200 via-gray-200 to-gray-300 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"
         >
@@ -31,7 +34,7 @@ const ProductDisplay = ({ products, selectedCategory }) => {
               </p>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
