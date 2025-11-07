@@ -4,14 +4,10 @@ const AddProduct = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="flex gap-2 items-center text-white hover:bg-gray-100 py-3 px-5 active:bg-gray-200 transition-colors rounded-full cursor-pointer"
+      className="flex items-center gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full shadow-md transition-all duration-200 ml-auto cursor-pointer"
     >
-      <div className="relative">
-        <PlusCircle size={26} className="cursor-pointer text-gray-700" />
-      </div>
-      <div>
-        <p className="text-gray-800 font-semibold">Add Product</p>
-      </div>
+      <PlusCircle size={22} />
+      <span>Add Product</span>
     </button>
   );
 };
