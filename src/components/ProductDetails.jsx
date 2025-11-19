@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { formatCurrency } from "../utils/formatCurrency";
+import { useCart } from "../hooks/CartContext";
 
 const ProductDetails = ({ product }) => {
   const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const { addToCart } = useCart();
 
   return (
     <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
@@ -74,6 +76,7 @@ const ProductDetails = ({ product }) => {
           </div>
 
           <button
+            onClick={() => addToCart(product, selectedQuantity)}
             className="mt-8 w-full px-6 py-3 rounded-xl bg-violet-600 text-white font-medium
                        hover:bg-violet-700 active:scale-95 transition-all duration-200 shadow-sm cursor-pointer"
           >
