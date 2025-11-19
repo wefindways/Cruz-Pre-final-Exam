@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
+import CartPage from "./pages/CartPage";
 
 function App() {
   // Default 3 products
@@ -47,12 +48,8 @@ function App() {
     },
   ]);
 
-  // Function to add product from modal
   const handleAddProduct = (newProduct) => {
-    setProducts((prev) => [
-      ...prev,
-      { ...newProduct, id: Date.now() }, // auto-generate unique ID
-    ]);
+    setProducts((prev) => [...prev, { ...newProduct, id: Date.now() }]);
   };
 
   return (
@@ -63,6 +60,7 @@ function App() {
           element={<Home products={products} onAddProduct={handleAddProduct} />}
         />
         <Route path="/details/:id" element={<Details products={products} />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </BrowserRouter>
   );
