@@ -9,7 +9,7 @@ const ProductDisplay = ({ products, selectedCategory }) => {
             product.category.toLowerCase() === selectedCategory.toLowerCase()
         );
   return (
-    <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-15 gap-8">
+    <div className="max-h-full w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-15 gap-8">
       {filteredProducts.map((product, index) => (
         <Link
           to={`/details/${product.id}`}

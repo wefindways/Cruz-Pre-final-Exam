@@ -4,7 +4,7 @@ const AddProduct = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="flex items-center gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full shadow-md transition-all duration-200 ml-auto cursor-pointer"
+      className="flex items-center gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold px-5 py-3 rounded-full shadow-md transition-all duration-200 ml-auto cursor-pointer active:scale-95"
     >
       <PlusCircle size={22} />
       <span>Add Product</span>
@@ -13,3 +13,4 @@ const AddProduct = ({ onClick }) => {
 };
 
 export default AddProduct;
+  
